@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="triangle" class="com.npntraining.Triangle">
+		<property name="type" value="Triangle"></property>
+	</bean>
+
+	<!--  <bean id="square" class="com.npntraining.Square">
+		<constructor-arg type="java.lang.String" value="Sqaure"/>
+		<constructor-arg type="int" value="5" />
+	</bean> -->
+
+	<!-- <bean id="square" class="com.npntraining.Square">
+		<constructor-arg index="0" value="Sqaure"/>
+		<constructor-arg index="1" value="5" />
+	</bean> -->
+	
+	
+	<bean id="square" class="com.npntraining.Square">
+		<constructor-arg name="type" value="Sqaure"/>
+		<constructor-arg name="side" value="5" />
+	</bean>
+	
+	<bean id="drawing" class="com.npntraining.Drawing">
+		<!-- <property name="shape" ref="triangle"></property> -->
+		<constructor-arg ref="triangle"></constructor-arg>
+	</bean>
+
+	<!-- <bean id="drawing" class="com.npntraining.Drawing"> 
+		<property name="shape" ref="square"></property>
+	 </bean> -->
+
+</beans>
